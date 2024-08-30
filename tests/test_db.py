@@ -9,6 +9,4 @@ def test_create_user(session):
     session.commit()
     query = select(User).where(User.email == "test@mail.com")
     result = session.scalar(query)
-    # session.refresh(user)
     assert result.username == "test"
-    # assert user.id == 1
